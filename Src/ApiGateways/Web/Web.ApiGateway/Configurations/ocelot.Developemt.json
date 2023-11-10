@@ -1,0 +1,48 @@
+{
+  "Routes": [
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "IdentityService",
+
+      "DownstreamPathTemplate": "/api/identityservice/{anything}",
+      "DownstreamScheme": "http",
+
+      "UpstreamPathTemplate": "/v1/tpis/{anything}", // tpis == TicketprojectIdentityService
+      "UpstreamHttpMethod": [ "Get", "Post", "Delete", "Put" ],
+      "UpstreamScheme": "http"
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "TicketService",
+
+      "DownstreamPathTemplate": "/api/ticketservice/{anything}",
+      "DownstreamScheme": "http",
+
+      "UpstreamPathTemplate": "/v1/tpts/{anything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Delete", "Put" ],
+      "UpstreamScheme": "http"
+    },
+    {
+      "UseServiceDiscovery": true,
+      "ServiceName": "PaymentService",
+
+      "DownstreamPathTemplate": "/api/paymentservice/{anything}",
+      "DownstreamScheme": "http",
+
+      "UpstreamPathTemplate": "/v1/tpps/{anything}",
+      "UpstreamHttpMethod": [ "Get", "Post", "Delete", "Put" ],
+      "UpstreamScheme": "http"
+    }    
+  ],
+
+  "GlobalConfiguration": {
+    "BaseUrl": "http://localhost:5010",
+    "ServiceDiscoveryProvider": {
+      "Host": "localhost",
+      "Port": 8500,
+      "Type": "Consul"
+    }
+  }
+
+
+}

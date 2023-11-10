@@ -1,0 +1,5 @@
+﻿
+1- tüm json configrasyonlerde localhost yada ip'ler değişecek.
+2- tüm servislerin launch browserler false olacak.
+5- tüm Dal context'lerde connection stringler kontrol edielecek.
+6- WebApiGateway'de consul ayarlama 

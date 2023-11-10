@@ -1,0 +1,30 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>annotations</Nullable>
+  </PropertyGroup>
+
+	<ItemGroup>
+
+		<PackageReference Include="MediatR" Version="12.1.1" />
+		<PackageReference Include="RabbitMQ.Client" Version="6.6.0" />
+		<PackageReference Include="MassTransit.RabbitMQ" Version="8.1.1" />
+		<PackageReference Include="StackExchange.Redis" Version="2.7.4" />
+		<PackageReference Include="RestSharp" Version="110.2.0" />
+		<PackageReference Include="FluentValidation.DependencyInjectionExtensions" Version="11.8.0" />
+		<PackageReference Include="AutoMapper.Extensions.Microsoft.DependencyInjection" Version="12.0.1" />
+		<PackageReference Include="Microsoft.AspNetCore.Owin" Version="7.0.13" />
+		<PackageReference Include="Microsoft.AspNetCore.SignalR.Client" Version="7.0.13" />
+
+	</ItemGroup>
+
+	<ItemGroup>
+	  <ProjectReference Include="..\..\..\MessageContracts\Contarcts\Contarcts.csproj" />
+	  <ProjectReference Include="..\TicketService.Core\TicketService.Core.csproj" />
+	  <ProjectReference Include="..\TicketService.DAL\TicketService.DAL.csproj" />
+	</ItemGroup>
+
+
+</Project>

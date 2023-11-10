@@ -1,0 +1,29 @@
+﻿
+
+// rabbitmq
+docker run -d --name rabbitmq -v rabbitmq:/var/lib/rabbitmq -e RABBITMQ_DEFAULT_USER=bera -e RABBITMQ_DEFAULT_PASS=1453 -p 5672:5672 -p 15672:15672 rabbitmq:3.10-management
+
+
+// consul
+docker run -d --name consul -v consul:/consul/data -p 8500:8500 -p 8600:8600/udp -p 8600:8600/tcp consul
+
+
+// redis
+docker run -d --name redis -v redis:/data -p 6379:6379 -d redis
+
+
+// redis İnsight
+docker run -d --name redis_insight --link redis:localhost -p 8001:8001 redislabs/redisinsight
+
+
+// postgres
+
+docker run -d --name postgres -v pgsql:/var/lib/postgresql/data -p 5432:5432 -e POSTGRES_PASSWORD=123 -e POSTGRES_USER=postgres -e POSTGRES_DB=tmp_database postgres
+
+
+// seq
+docker run -d --name seq --restart unless-stopped -v seq_data:/data -e ACCEPT_EULA=Y -p 5341:80 datalust/seq
+
+
+// portainer
+docker run -d -p 9000:9000 -p 9443:9443 --name portainer --restart=always -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data portainer/portainer-ce:latest

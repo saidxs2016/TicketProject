@@ -1,0 +1,11 @@
+
+
+Web.ApiGateway						-> http://localhost:5010
+
+
+IdentityServicve.Api				-> http://localhost:5011
+TicketService.Api					-> http://localhost:5012
+PaymentService.Api					-> http://localhost:5013
+
+
+
